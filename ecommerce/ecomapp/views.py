@@ -41,7 +41,7 @@ from django.template.loader import render_to_string
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-
+from decimal import Decimal
 
 User = get_user_model()
 
@@ -164,7 +164,7 @@ class ProductsListCreateView(generics.ListCreateAPIView):
         if self.request.method == 'POST':
             return [IsAdminUser()]
         return [IsAuthenticated()]
-    from decimal import Decimal
+    
 
 
     def get_serializer_class(self):
